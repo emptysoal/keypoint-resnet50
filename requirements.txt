@@ -1,0 +1,8 @@
+numpy
+# torch>=1.7.0
+# torchvision>=0.8.0
+matplotlib
+opencv-python==3.4.16.59
+Pillow
+tensorboard
+tqdm
