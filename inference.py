@@ -7,6 +7,7 @@ import numpy as np
 import torch
 
 from kpt_resnet50 import KptResNet50
+from kpt_hrnet import PoseHighResolutionNet
 
 model_file = "./model/best.pth"
 kpt_num = 4
@@ -19,6 +20,7 @@ y_feat_stride = input_height / heatmap_height
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = KptResNet50(kpt_num=kpt_num, pretrained=False)
+# model = PoseHighResolutionNet(kpt_num=kpt_num, pretrained=False)
 model.load_state_dict(torch.load(model_file, map_location='cpu'))
 model.to(device)
 
