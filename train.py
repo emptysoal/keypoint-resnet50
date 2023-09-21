@@ -11,6 +11,7 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 from torch.utils.tensorboard import SummaryWriter
 
 from kpt_resnet50 import KptResNet50
+from kpt_hrnet import PoseHighResolutionNet
 from dataset import KeypointDataset
 from evaluate import accuracy
 
@@ -117,6 +118,7 @@ def run():
     logging.info(f'Using device {device}')
 
     model = KptResNet50(kpt_num=args.kpt_num, pretrained=True)
+    # model = PoseHighResolutionNet(kpt_num=args.kpt_num, pretrained=True)
     model.to(device)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
