@@ -86,7 +86,7 @@ Test loss: 0.002241: 100%|██████████████████
 INFO: Epoch: 1 valid done, Loss: 0.002241, Accuracy: 12.5000%.
 ```
 
-- 可以通过 tensorboard 查看 loss 变化情况
+- 可以通过 tensorboard 查看 loss 变化
 
 ```base
 tensorboard --logdir model/
